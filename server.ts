@@ -1,6 +1,7 @@
 import type { RequestHandler, ServerBuild } from '@remix-run/cloudflare'
 import { type AppLoadContext } from '@remix-run/cloudflare'
 import { Hono } from 'hono'
+import { poweredBy } from 'hono/powered-by'
 import { staticAssets } from 'remix-hono/cloudflare'
 import { remix } from 'remix-hono/handler'
 
@@ -13,6 +14,7 @@ const app = new Hono<{
 
 let handler: RequestHandler | undefined
 
+app.use(poweredBy())
 app.get('/hono', (c) => c.text('Hono, ' + c.env.MY_VAR))
 
 app.use(
