@@ -1,0 +1,42 @@
+{
+  "name": "2507",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "remix vite:build",
+    "deploy": "wrangler pages deploy ./build/client",
+    "dev": "vite",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "start": "wrangler pages dev ./build/client",
+    "typecheck": "tsc",
+    "typegen": "wrangler types"
+  },
+  "dependencies": {
+    "@remix-run/cloudflare": "^2.8.1",
+    "@remix-run/cloudflare-pages": "^2.8.1",
+    "@remix-run/react": "^2.8.1",
+    "hono": "^4.2.5",
+    "isbot": "^4.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240405.0",
+    "@hono/eslint-config": "^0.0.4",
+    "@hono/node-server": "^1.11.0",
+    "@hono/vite-cloudflare-pages": "^0.2.5",
+    "@hono/vite-dev-server": "^0.11.1",
+    "@remix-run/dev": "^2.8.1",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "eslint": "^8.38.0",
+    "remix-hono": "^0.0.16",
+    "typescript": "^5.1.6",
+    "vite": "^5.1.0",
+    "wrangler": "^3.51.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
