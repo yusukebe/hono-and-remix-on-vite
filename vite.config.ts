@@ -13,7 +13,7 @@ export default defineConfig({
     remix(),
     devServer({
       adapter,
-      entry: 'hono-app.ts',
+      entry: 'server.ts',
       exclude: [...defaultOptions.exclude, '/app/**'],
       injectClientScript: false
     })
