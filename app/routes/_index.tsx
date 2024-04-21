@@ -15,7 +15,7 @@ export default function Index() {
   const { myVar } = useLoaderData<typeof loader>()
 
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.8' }}>
+    <div>
       <h1>Welcome Remix and Hono on Vite</h1>
       <ul>
         <li>Remix, {myVar}</li>
