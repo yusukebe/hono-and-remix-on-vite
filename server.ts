@@ -1,11 +1,10 @@
-import type { RequestHandler, ServerBuild } from '@remix-run/cloudflare'
+import type { RequestHandler } from '@remix-run/cloudflare'
 import { type AppLoadContext } from '@remix-run/cloudflare'
 import { Hono } from 'hono'
 import { poweredBy } from 'hono/powered-by'
 import { staticAssets } from 'remix-hono/cloudflare'
 import { remix } from 'remix-hono/handler'
 
-const serverBuildId = 'virtual:remix/server-build'
 const app = new Hono<{
   Bindings: {
     MY_VAR: string
@@ -42,9 +41,8 @@ app.use(
       })(c, next)
     } else {
       if (!handler) {
-        const { createServer } = await import('vite')
-        const viteDevServer = await createServer()
-        const build = (await viteDevServer.ssrLoadModule(serverBuildId)) as ServerBuild
+        // @ts-expect-error it's not typed
+        const build = await import('virtual:remix/server-build')
         const { createRequestHandler } = await import('@remix-run/cloudflare')
         handler = createRequestHandler(build, 'development')
       }
