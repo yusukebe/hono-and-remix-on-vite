@@ -23,6 +23,7 @@ export default function Index() {
           <a href="/hono">Hono</a>
         </li>
       </ul>
+      <img src="/assets/hono-logo.png" />
     </div>
   )
 }
