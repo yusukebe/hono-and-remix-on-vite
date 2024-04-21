@@ -14,7 +14,7 @@ export default defineConfig({
     devServer({
       adapter,
       entry: 'server.ts',
-      exclude: [...defaultOptions.exclude, '/app/**'],
+      exclude: [...defaultOptions.exclude, '/assets/**', '/app/**'],
       injectClientScript: false
     })
   ]
