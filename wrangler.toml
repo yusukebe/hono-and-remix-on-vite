@@ -1,6 +1,7 @@
 name = "my-app"
 compatibility_date = "2024-04-01"
 compatibility_flags = [ "nodejs_compat" ]
+pages_build_output_dir = "./build/client"
 
 [vars]
 MY_VAR = "Hello from Cloudflare"
